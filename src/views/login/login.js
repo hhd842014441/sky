@@ -33,7 +33,7 @@ export default {
         validateCodeText: that.loginInfo.verifyCode,
         captcha: Cookies.get("captcha")
       }
-      $api.login.subInfo(params).then(res => {
+      this.$api.login.subInfo(params).then(res => {
         try {
           var dateStatus = res.data.status
           if (203 == dateStatus) {

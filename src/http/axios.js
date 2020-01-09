@@ -9,9 +9,11 @@ import router from '@/router'
 export default function $axios(options) {
   return new Promise((resolve, reject) => {
     const instance = axios.create({
+
       baseURL: config.baseUrl,
       headers: config.headers,
       timeout: config.timeout,
+      changeOrigin: config.changeOrigin,
       withCredentials: config.withCredentials
     })
 
@@ -60,7 +62,7 @@ export default function $axios(options) {
           error = errorInfo.data  // 页面那边catch的时候就能拿到详细的错误信息,看最下边的Promise.reject
           const errorStatus = errorInfo.status; // 404 403 500 ...
           router.push({
-            path: `/error/${errorStatus}`
+            path: `/error`
           })
         }
         return Promise.reject(error) // 在调用的那边可以拿到(catch)你想返回的错误信息

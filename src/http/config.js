@@ -7,14 +7,19 @@ export default {
   baseUrl: baseUrl,
   // 请求头信息
   headers: {
-    'Content-Type': 'application/json;charset=UTF-8'
+    'Content-Type': 'application/json;charset=UTF-8',
+    'Access-Control-Allow-Origin':'*',
+    'channel': 'nevermore',
+    'Signature': 'nevermore'
   },
   // 参数
   data: {},
   // 设置超时时间
   timeout: 10000,
   // 携带凭证
-  withCredentials: true,
+  withCredentials: false,
   // 返回数据类型
-  responseType: 'json'
+  responseType: 'json',
+  //跨域
+  changeOrigin:true
 }

@@ -4,7 +4,7 @@ login.subInfo = function (parms) {
   return axios({
     url: '/login',
     method: 'post',
-    data: Qs.stringify(parms)
+    data: parms
   })
 }
 login.validateCode = function () {
