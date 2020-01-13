@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     clickCapatch: function () {
-      this.loginInfo.src = url.baseUrl + '/kaptcha/render'
+      this.loginInfo.src = url.baseUrl + '/kaptcha/render?time='+new Date();
     },
     froget() {
 
@@ -35,10 +35,10 @@ export default {
       }
       this.$api.login.subInfo(params).then(res => {
         try {
-          var dateStatus = res.data.status
+          var dateStatus = res.status
           if (203 == dateStatus) {
-            localStorage.setItem('token', res.data.jwtToken)
-            this.$router.push({path: '/success',});
+              Cookies.set('token', res.jwtToken)
+            this.$router.push({path: '/home',});
           } else {
             this.$router.push({path: '/error',});
           }

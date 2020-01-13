@@ -6,6 +6,7 @@ import router from './router'
 import api from './http'
 import store from '@/store'
 import global from '@/http/global'
+import i18n from './i18n'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 Vue.config.productionTip = false

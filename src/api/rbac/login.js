@@ -1,10 +1,11 @@
 import axios from "@/http/axios";
+import qs from 'qs';
 let login = {};
 login.subInfo = function (parms) {
   return axios({
     url: '/login',
     method: 'post',
-    data: parms
+    data:qs.stringify(parms)
   })
 }
 login.validateCode = function () {
