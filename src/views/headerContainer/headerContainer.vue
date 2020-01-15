@@ -1,10 +1,10 @@
 <template>
-  <div class="main-header" :style="{'background':themeColor}">
+  <div class="main-header" :style="{'background':themeColor}"
+       >
     <!-- Logo Header -->
     <div class="logo-header">
-      <el-menu :background-color="themeColor" text-color="#fff" :active-text-color="themeColor"
-               mode="horizontal">
-        <el-menu-item index="1">天 空 之 城</el-menu-item>
+      <el-menu :background-color="themeColor" :active-text-color="themeColor" mode="horizontal">
+        <el-menu-item>天 空 之 城</el-menu-item>
       </el-menu>
     </div>
     <div class="hamburg">

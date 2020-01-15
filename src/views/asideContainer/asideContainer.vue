@@ -1,6 +1,6 @@
 <template>
   <!-- Sidebar -->
-  <div class="sidebar" :style="{'background':themeColor}">
+  <div class="sidebar" :style="{'background':oldThemeColor}">
   </div>
 </template>
 
