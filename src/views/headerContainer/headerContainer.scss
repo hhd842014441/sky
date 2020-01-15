@@ -1,8 +1,33 @@
-.el-header {
-  background-color: #B3C0D1;
-  color: #333;
-  line-height: 60px;
-  text-align: right;
-  font-size: 12px;
-  width: 10%;
+.main-header {
+  background: #ffffff;
+  min-height: 57px;
+  width: 100%;
+  position: fixed;
+  z-index: 1001;
+}
+.hamburg {
+  float: left;
+}
+.main-header .logo-header {
+  float: left;
+  width: 180px;
+  height: 57px;
+  line-height: 45px;
+  color: #333333;
+  z-index: 1001;
+  font-size: 17px;
+  font-weight: 400;
+  padding-left: 25px;
+  padding-right: 25px;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: all .3s;
+}
+.logo-header .el-menu-item{
+  height: 58px;
+}
+.nav-header {
+  float: right;
 }

@@ -1,12 +1,15 @@
 <template>
   <div class="login-container">
+    <theme-picker style="float:right;" class="theme-picker" :default="themeColor"
+                  @onThemeChange="onThemeChange"></theme-picker>
+    <lang-selector style="float:right;"></lang-selector>
     <el-form :model="loginInfo" :rules="myrule"
              status-icon
              ref="loginInfo"
              label-position="left"
              label-width="0px"
              class="demo-ruleForm login-page">
-      <h3 class="title">系统登录</h3>
+      <h3 class="title">面朝大海 春暖花开</h3>
       <el-form-item prop="username">
         <el-input prefix-icon="el-icon-user-solid" v-model="loginInfo.username"
                   auto-complete="off"/>
@@ -24,7 +27,9 @@
         <a class="login-form-forgot" @click="froget" style="float:right;" href="javascript:;">忘记密码 </a>
       </el-form-item>
       <el-form-item style="width:100%;">
-        <el-button type="primary" style="width:100%;" @click="loginafter" :loading="loading">登录</el-button>
+        <el-button type="primary" style="width:100%;" :style="{'background':themeColor}" @click="loginafter"
+                   :loading="loading">{{$t("common.login")}}
+        </el-button>
       </el-form-item>
     </el-form>
   </div>

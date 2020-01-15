@@ -1,0 +1,8 @@
+.main-panel {
+  position: relative;
+  width: calc(100% - 240px);
+  height: 100vh;
+  min-height: 100%;
+  float: right;
+  transition: all .3s;
+}

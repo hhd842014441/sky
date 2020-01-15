@@ -1,7 +1,15 @@
 import url from "@/http/global";
+import ThemePicker from "@/components/ThemePicker"
+import LangSelector from "@/components/LangSelector"
 import Cookies from "js-cookie";
+import {mapState} from 'vuex'
+
 export default {
   name: 'login',
+  components: {
+    "theme-picker": ThemePicker,
+    "lang-selector": LangSelector
+  },
   data() {
     return {
       loading: false,
@@ -20,10 +28,14 @@ export default {
   },
   methods: {
     clickCapatch: function () {
-      this.loginInfo.src = url.baseUrl + '/kaptcha/render?time='+new Date();
+      this.loginInfo.src = url.baseUrl + '/kaptcha/render?time=' + new Date();
     },
     froget() {
 
+    },
+    // 切换主题
+    onThemeChange: function (themeColor) {
+      this.$store.commit('setThemeColor', themeColor)
     },
     loginafter() {
       let that = this
@@ -37,7 +49,7 @@ export default {
         try {
           var dateStatus = res.status
           if (203 == dateStatus) {
-              Cookies.set('token', res.jwtToken)
+            Cookies.set('token', res.jwtToken)
             this.$router.push({path: '/home',});
           } else {
             this.$router.push({path: '/error',});
@@ -47,6 +59,11 @@ export default {
         }
       })
     }
+  },
+  computed: {
+    ...mapState({
+      themeColor: state => state.app.themeColor
+    })
   }
 };
 

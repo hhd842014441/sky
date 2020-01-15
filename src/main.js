@@ -9,6 +9,11 @@ import global from '@/http/global'
 import i18n from './i18n'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import 'font-awesome/css/font-awesome.min.css'
+import $ from 'jquery'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min'
+import '@/theme/index.css'
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(api)
@@ -17,6 +22,7 @@ Vue.prototype.global = global
 new Vue({
   el: '#app',
   router,
+  i18n,
   store,
   components: { App },
   template: '<App/>'

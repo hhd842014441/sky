@@ -1,4 +1,17 @@
-
-.el-aside {
-  color: #333;
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 240px;
+  padding-top: 57px;
+  display: block;
+  z-index: 1000;
+  color: #ffffff;
+  font-weight: 200;
+  background: #ffffff;
+  -webkit-box-shadow: 1px 0 10px rgba(69, 65, 78, 0.06);
+  -moz-box-shadow: 1px 0 10px rgba(69, 65, 78, 0.06);
+  box-shadow: 1px 0 10px rgba(69, 65, 78, 0.06);
+  transition: all .3s;
 }
